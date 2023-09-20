@@ -7,14 +7,30 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="clockContainer">
         <h1>Pomodoro Clock</h1>
-        <div class="breakLength">
-            <p>Break Length</p>
-            
-            <p>Session Length</p>
+        <div class="timeContainer">
+            <div class="time">
+                <p>Break Length</p>
+                <div class="timeAdjustDiv">
+                    <i id="minusBreak" class="adjustBreak fas fa-minus"></i>
+                    <p id="breakDisplay">5</p>
+                    <i id="plusBreak" class="adjustBreak fas fa-plus"></i>
+                </div>
+                
+            </div>
+            <div class="time">
+                <p>Session Length</p>
+                <div class="timeAdjustDiv">
+                    <i id="minusWork" class="adjustWork fas fa-minus"></i>
+                    <p id="workDisplay">20</p>
+                    <i id="plusWork" class="adjustWork fas fa-plus"></i>
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -12,9 +12,17 @@ body {
     align-items: center;
 }
 
-.breakLength {
+.timeContainer {
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
     gap: 20px;
 }
+
+.timeAdjustDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
