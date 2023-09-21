@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="clockContainer">
+    <div class="divContainer">
         <h1>Pomodoro Clock</h1>
-        <div class="timeContainer">
+        <div class="lengthContainer">
             <div class="time">
                 <p>Break Length</p>
                 <div class="timeAdjustDiv">
@@ -27,9 +27,20 @@
                 <p>Session Length</p>
                 <div class="timeAdjustDiv">
                     <i id="minusWork" class="adjustWork fas fa-minus"></i>
-                    <p id="workDisplay">20</p>
+                    <p id="workDisplay">25</p>
                     <i id="plusWork" class="adjustWork fas fa-plus"></i>
                 </div>
+            </div>
+        </div>
+        <div class="timeContainer">
+            <p id="activityText">Session</p>
+            <p id="clockText">25:00</p>
+        </div>
+        <div class="divButtons">
+            <button class="btn" name="btnStart" value="start">Start <i class="fas fa-play"></i></button>
+            <div class="btnSub">
+                <button class="btn" name="btnPause" value="pause">Pause <i class="fas fa-pause"></i></button>
+                <button class="btn" name="btnRestart" value="restart">Reset <i class="fas fa-redo"></i></button>
             </div>
         </div>
     </div>

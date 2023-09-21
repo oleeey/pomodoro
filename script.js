@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    let breakTime = 5;
-    let workTime = 20;
+    let breakTime = $("#breakDisplay").text();
+    let workTime = $("#workDisplay").text();
 
     $(".adjustBreak").click(function(event) {
         if (event.target.id == "minusBreak" && breakTime > 1) {
@@ -21,6 +21,7 @@ $(document).ready(function() {
         }
         $("#workDisplay").text(workTime);
     })
+
 
 
 
