@@ -22,7 +22,17 @@ $(document).ready(function() {
         $("#workDisplay").text(workTime);
     })
 
-
-
-
+    $(".btn").click(function(event) {
+        switch(event.target.value) {
+            case "start":
+                startClock(breakTime, workTime);
+        }
+    })
 });
+
+function startClock(breakTime, workTime) {
+    
+    const x = setInterval(function() {
+
+    })
+}
