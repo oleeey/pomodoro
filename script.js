@@ -25,23 +25,23 @@ $(document).ready(function() {
     $(".btn").click(function(event) {
         switch(event.target.value) {
             case "start":
-                startClock(breakTime, workTime);
+                startClock(breakTime, 1);
         }
     })
 });
 
 function startClock(breakTime, workTime) {
-    let seconds = workTime * 60;
-    let minutes = Math.floor(seconds / 60) - 1;
+    let seconds = workTime * 60; 
 
     const x = setInterval(function() {
-        seconds -= 10;
-        if (seconds % 60 == 0) {
-            minutes--;
+        if (seconds > 0) {
+            seconds -= 10;
+            let minutes = Math.floor(seconds / 60);
+            console.log(minutes, seconds % 60);
+            $("#clockDisplay").text(`${minutes}:${seconds % 60}`);
         }
-        
-        
-        console.log(minutes, seconds % 60);
-        $("#clockDisplay").text(`${minutes}:${seconds % 60}`);
+        else {
+            return;
+        }
     }, 1000)
 }
