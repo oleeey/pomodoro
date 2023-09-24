@@ -31,8 +31,17 @@ $(document).ready(function() {
 });
 
 function startClock(breakTime, workTime) {
-    
-    const x = setInterval(function() {
+    let seconds = workTime * 60;
+    let minutes = Math.floor(seconds / 60) - 1;
 
-    })
+    const x = setInterval(function() {
+        seconds -= 10;
+        if (seconds % 60 == 0) {
+            minutes--;
+        }
+        
+        
+        console.log(minutes, seconds % 60);
+        $("#clockDisplay").text(`${minutes}:${seconds % 60}`);
+    }, 1000)
 }
