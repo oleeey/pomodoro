@@ -35,24 +35,32 @@ $(document).ready(function() {
 function clock(breakTime, workTime, status) {
     status == "work" ? time = workTime : time = breakTime;
     let seconds = time * 60;
+    let isPaused = false;
+    var x;
 
-    const x = setInterval(function() {
-        if (seconds > 0) {
-            seconds -= 1;
-            let minutes = Math.floor(seconds / 60);
-            console.log(minutes, seconds % 60);
-            $("#clockDisplay").text(`${minutes}:${seconds % 60}`);
-        }
-        else {
-            clearInterval(x);
-            time == workTime ? clock(breakTime, workTime, "break") : clock(breakTime, workTime, "work");
-        }
-    }, 1000)
+
+    if (!isPaused) {
+        x = setInterval(function() {
+            if (seconds > 0) {
+                seconds -= 1;
+                let minutes = Math.floor(seconds / 60);
+                console.log(minutes, seconds % 60);
+                $("#clockDisplay").text(`${minutes}:${seconds % 60}`);
+            }
+            else {
+                clearInterval(x);
+                time == workTime ? clock(breakTime, workTime, "break") : clock(breakTime, workTime, "work");
+            }
+        }, 1000)
+    }
 
     $(".btn").click(function(event) {
         switch(event.target.value) {
             case "start":
                 clearInterval(x);
+            case "pause":
+                clearInterval(x);
+                isPaused = true;
         }
     }) 
 }
